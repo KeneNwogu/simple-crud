@@ -10,10 +10,18 @@
 		$category = $_POST['category'];
 
 		//insert query
-		$sql = "INSERT INTO movies (title, category, rating) VALUES 
+        $query = "INSERT INTO movies (title, category, rating) VALUES 
         ('$title', '$category', '$rating')";
 
-		$db->exec($sql);
+        mysqli_query($db, $query);
+        // $statement = mysqli_prepare($db, $query);
+
+        // mysqli_stmt_bind_param($statement, "iss", $title, $category, $rating);
+
+        // mysqli_stmt_execute($statement);
+
+        // mysqli_close($statement);
+        mysqli_close($db);
 
 		header('Location: index.php');
         exit();

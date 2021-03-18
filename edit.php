@@ -3,9 +3,9 @@
 	include 'dbconfig.php';
 
 	//get the row of selected id
-	$sql = "SELECT id, * FROM movies WHERE id = '".$_GET['id']."'";
-	$query = $db->query($sql);
-	$row = $query->fetchArray();
+	$sql = "SELECT id, title, category, rating FROM movies WHERE id = '".$_GET['id']."'";
+	$query = mysqli_query($db, $sql);
+	$row = mysqli_fetch_array($query);
 
 ?>
 <!DOCTYPE html>
@@ -52,7 +52,8 @@
 		
 		//update our table
 		$sql = "UPDATE movies SET title = '$title', rating = '$rating', category = '$category' WHERE id = '".$_GET['id']."'";
-		$db->exec($sql);
+		$query = mysqli_query($db, $sql);
+		mysqli_close($db);
 
 		header('location: index.php');
 		exit();

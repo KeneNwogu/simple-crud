@@ -22,10 +22,9 @@
 			include 'dbconfig.php';
 
 			//query from the table that we create
-			$sql = "SELECT id, * FROM movies";
-			$query = $db->query($sql);
+			$q = mysqli_query($db, "SELECT id, title, category, rating FROM movies");
 
-			while($row = $query->fetchArray()){
+			while($row = mysqli_fetch_array($q)){
 				echo "
 					<tr>
 						<td>".$row['id']."</td>
