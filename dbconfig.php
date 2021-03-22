@@ -1,9 +1,9 @@
 <?php
 //Create a new SQLite3 Database
-define('DB_USER', 'student');
-define('DB_PASSWORD', 'krillin');
-define('DB_NAME', 'moviedb');
-define('DB_HOST', 'localhost');
+define('DB_USER', 'awnf63UsrV');
+define('DB_PASSWORD', '5u5LukxsFl');
+define('DB_NAME', 'awnf63UsrV');
+define('DB_HOST', 'remotemysql.com');
 
 // $db = new PDO('sqlite:movies.sqlite');
 
